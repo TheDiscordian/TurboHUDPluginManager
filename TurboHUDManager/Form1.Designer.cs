@@ -72,11 +72,13 @@
             // EnabledCheckBox
             // 
             this.EnabledCheckBox.AutoSize = true;
+            this.EnabledCheckBox.CausesValidation = false;
             this.EnabledCheckBox.Enabled = false;
             this.EnabledCheckBox.Location = new System.Drawing.Point(464, 74);
             this.EnabledCheckBox.Name = "EnabledCheckBox";
             this.EnabledCheckBox.Size = new System.Drawing.Size(15, 14);
             this.EnabledCheckBox.TabIndex = 11;
+            this.EnabledCheckBox.TabStop = false;
             this.EnabledCheckBox.UseVisualStyleBackColor = true;
             this.EnabledCheckBox.Click += new System.EventHandler(this.EnabledCheckBox_Click);
             // 

@@ -301,6 +301,7 @@ namespace Turbo.Plugins.User
         {
             Plugins[IndexPlugin(PluginListBox.Items[PluginListBox.SelectedIndex].ToString())].enabled = EnabledCheckBox.Checked;
             SaveChanges();
+            PluginListBox.Focus();
         }
     }
 }
