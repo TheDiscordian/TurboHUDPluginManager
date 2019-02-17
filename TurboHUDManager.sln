@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboHUDManager", "TurboHUDManager\TurboHUDManager.csproj", "{A859D9D9-9A3D-4735-8E14-4B540F253D7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A859D9D9-9A3D-4735-8E14-4B540F253D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A859D9D9-9A3D-4735-8E14-4B540F253D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A859D9D9-9A3D-4735-8E14-4B540F253D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A859D9D9-9A3D-4735-8E14-4B540F253D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DF48F33-99A0-4B7C-B56B-11590E6C4812}
+	EndGlobalSection
+EndGlobal
