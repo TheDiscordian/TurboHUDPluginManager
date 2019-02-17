@@ -212,8 +212,13 @@ namespace Turbo.Plugins.User
                     foreach (string line in File.ReadLines(file, Encoding.UTF8))
                     {
                         // Skip if file doesn't use "BasePlugin" (not a plugin)
-                        if (line.IndexOf("class") > -1 && line.IndexOf("BasePlugin") == -1)
-                            break;
+                        if (line.IndexOf("class") > -1)
+                        {
+                            if (line.IndexOf("BasePlugin") == -1)
+                                break;
+                            System.Diagnostics.Debug.WriteLine(info.Last() + " -> " + line.Trim().Split(' ')[2]);
+                            info[info.Length - 1] = line.Trim().Split(' ')[2];
+                        }
 
                         int index = line.IndexOf("Enabled = "); // Check if this line is an "Enabled" line.
 
@@ -240,10 +245,6 @@ namespace Turbo.Plugins.User
                         AuthorListBox.Items.Add(info[skip]);
                         lastAuthor = info[skip];
                     }
-
-                    // TEMP FIX FOR BUG: https://www.ownedcore.com/forums/showthread.php?t=778385&p=4014303
-                    if (info.Last() == "UiHiddenPortraitSkillBarPlugin")
-                        info[info.Length - 1] = "UiHiddenPlayerSkillBarPlugin";
 
                     Plugins.Add(new PluginObj(String.Join(".", info.Skip(skip).ToArray()), info.Last(), info[skip], enabled, path)); // Add plugin to list.
                     System.Diagnostics.Debug.WriteLine(Plugins.Last().author + ": " + Plugins.Last().id + " (Enabled: " + Plugins.Last().enabled.ToString() + ")"); // Dump some debugging info.
