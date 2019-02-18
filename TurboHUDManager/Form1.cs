@@ -65,16 +65,17 @@ namespace Turbo.Plugins.User
                 return;
             var lines = File.ReadLines(PathBox.Text + @"\User\PluginManagerPlugin.cs", Encoding.UTF8).ToArray();
             string author = "";
-            for (var i = 22; i < lines.Length-5; i++)
+            for (var i = 21; i < lines.Length-3; i++)
             {
                 if (lines[i].IndexOf("//") > -1)
-                    author = lines[i].Substring(lines[i].IndexOf("//") + 1);
+                    author = lines[i].Substring(lines[i].IndexOf("//") + 2);
 
                 int index = lines[i].IndexOf("Hud.TogglePlugin<"); // Check if this line is a toggle line.
                 
                 if (index > -1)
                 {
                     int pIndex = -1;
+                   
                     if (author == "Default")
                         pIndex = IndexPlugin(lines[i].Substring(index + 17, lines[i].IndexOf(">") - index - 17));
                     else
@@ -82,6 +83,7 @@ namespace Turbo.Plugins.User
 
                     if (pIndex == -1)
                     {
+                        System.Diagnostics.Debug.WriteLine(author);
                         continue;
                     }
                     bool pEnabled = lines[i].Substring(lines[i].IndexOf('(') + 1, 4) == "true";
@@ -136,6 +138,7 @@ namespace Turbo.Plugins.User
                 if (Plugins[i].name == name)
                     return i;
 
+            System.Diagnostics.Debug.WriteLine(name + " not found...");
             return -1;
         }
 
